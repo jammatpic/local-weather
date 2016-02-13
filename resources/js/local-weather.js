@@ -9,6 +9,7 @@ function loadWeather() {
             var data;
             
             var locationInfo = "lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+            //locationInfo = "lat=51.5072&lon=-0.1275"
             var apiKey = "&APPID=5c5b877d759ecaf92e4d2106bb72e23e";
             
             apiCall = "http://api.openweathermap.org/data/2.5/weather?" + locationInfo + apiKey + "&units=metric";
