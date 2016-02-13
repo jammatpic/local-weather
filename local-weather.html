@@ -1,29 +1,33 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="vendors/weather-icons/css/weather-icons.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 	<script type="text/javascript" src="resources/js/local-weather.js"></script>
 </head>
 
 <body>
-    <header class = "page-header text-center">
-        <h1 id = "test">Local Weather App</h1>
-    </header>
-    <div class = "row text-center">
-        <div class = "col-xs-6">
-            <h2 id = "location"></h2>
-        </div>
-        <div class = "col-xs-6">
-            <h2 id = "condition"></h2>
-        </div>
-    </div>
-    <div class = "row text-center">
-        <div class = "col-xs-6"></div>
-        <div class = "col-xs-6">
-            <button class = "btn btn-default">Fahrenheit instead?</button>
-        </div>
-    </div>
+    <div class="container-fluid">
+        <header class = "page-header text-center">
+            <h1 id = "test">Local Weather App</h1>
+        </header>
         <div class = "row text-center">
-        <div class = "col-xs-12"></div>
+            <div class = "col-xs-6">
+                <h2 id = "location"></h2>
+            </div>
+            <div class = "col-xs-6">
+                <h2 id = "condition"></h2>
+            </div>
+        </div>
+        <div class = "row text-center">
+            <div class = "col-xs-6"></div>
+            <div class = "col-xs-6">
+                <button class = "btn btn-default">Fahrenheit instead?</button>
+            </div>
+        </div>
+            <div class = "row text-center">
+                <i class="wi wi-day-sunny"></i>
+            <div class = "col-xs-12"></div>
+        </div>
     </div>
 </body>

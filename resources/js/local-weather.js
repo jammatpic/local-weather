@@ -17,9 +17,19 @@ function loadWeather() {
                 data = json;
                 $("#condition").text(Math.round(JSON.stringify(data.main.temp)) + "°C" + ", " + firstUpperCase(data.weather[0].description));
                 $("#location").text(data.name + ", " + data.sys.country);
+                // determining whether night or day
+                if (Date.now()/1000 > data.sys.sunset && Date.now()/1000 < data.sys.sunrise) {
+                    var lightStatus = "night";
+                } else {
+                    var lightStatus = "day";
+                }
+                // creating class for icon: taking into account weather condition and time of day
+                $("i").removeClass();
+                $("i").addClass("wi wi-owm-" + lightStatus + "-" + JSON.stringify(data.weather[0].id));
+                
             });
         });
-    };
+    }
 }
 
 $(document).ready(function() {
