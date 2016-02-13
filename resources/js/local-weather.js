@@ -15,10 +15,11 @@ function loadWeather() {
             
             $.getJSON(apiCall, function(json) {
                 data = json;
-                $("#condition").text(Math.round(JSON.stringify(data.main.temp)) + "°C" + ", " + firstUpperCase(data.weather[0].description));
+                $("#temperature").text(Math.round(JSON.stringify(data.main.temp)) + "°C");
+                $("#condition").text(firstUpperCase(data.weather[0].description));
                 $("#location").text(data.name + ", " + data.sys.country);
                 // determining whether night or day
-                if (Date.now()/1000 > data.sys.sunset && Date.now()/1000 < data.sys.sunrise) {
+                if (Date.now()/1000 > data.sys.sunset || Date.now()/1000 < data.sys.sunrise) {
                     var lightStatus = "night";
                 } else {
                     var lightStatus = "day";
@@ -41,18 +42,18 @@ $(document).ready(function() {
         if (unit === 0) {
             unit = 1;
             // grabbing the temperature and converting to F
-            temp = Number($("#condition").text().substr(0, $("#condition").text().indexOf("°")));
+            temp = Number($("#temperature").text().substr(0, $("#temperature").text().indexOf("°")));
             temp = Math.round(temp*(9/5) + 32);
-            // reconstructing the condition string
-            $("#condition").text(temp + "°F," + $("#condition").text().substr($("#condition").text().indexOf(" "), $("#condition").text().length));
+            // Adding symbols and relabelling button
+            $("#temperature").text(temp + "°F")
             $(".btn").text("Celsius instead?");
         } else {
             unit = 0;
             // grabbing the temperature and converting to C
-            temp = Number($("#condition").text().substr(0, $("#condition").text().indexOf("°")));
+            temp = Number($("#temperature").text().substr(0, $("#temperature").text().indexOf("°")));
             temp = Math.round((temp-32) * (5/9));
-            // reconstructing the condition string
-            $("#condition").text(temp + "°C," + $("#condition").text().substr($("#condition").text().indexOf(" "), $("#condition").text().length));
+            // Adding symbols and relabelling button
+            $("#temperature").text(temp + "°C")
             $(".btn").text("Fahrenheit instead?");
         }
     });

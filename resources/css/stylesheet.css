@@ -1,3 +1,52 @@
-i {
-    font-size:5em;
+.wi {
+    font-size:6em;
+}
+#temperature {
+    padding:0px;
+    margin:0px;
+}
+.btn {
+    margin-top:30px;
+}
+#temperature, #location {
+    padding-top:8px;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    padding-top:40px;
+}
+
+.big-heading {
+    font-size:45px;
+    margin:0px;
+    padding:20px;
+}
+
+.page-header {
+    background:#009688;
+    padding: 30px 0px 20px 0px;
+    margin: 0 -15px 0px -15px;
+    color:white;
+}
+
+@media (max-width: 767px) {
+    .page-header {
+        margin-bottom: 0px;
+    }
+    #temperature, #location {
+        margin-top:0px;
+    }
+    .col {
+        text-align: center;
+    }
+    .btn {
+        margin-top:5px;
+    }
+    .wi {
+        padding:10px;
+    }
 }
