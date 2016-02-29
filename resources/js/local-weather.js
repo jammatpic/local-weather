@@ -30,11 +30,11 @@ function loadWeather() {
                 $("i").removeClass();
                 $("i").addClass("wi wi-owm-" + lightStatus + "-" + JSON.stringify(data.weather[0].id));
                 
-                if (firstLoad === true) { // code is here so it runs once loaded
+                /*if (firstLoad === true) { // code is here so it runs once loaded
                     $(".last").append('<button class = "btn btn-default">Fahrenheit instead?</button>');
                 } else {
                     firstLoad = false;
-                }
+                }*/
             });
         });
     } 
@@ -44,6 +44,7 @@ $(document).ready(function() {
     var unit = 0;
     var temp;
     loadWeather();
+    
     
     $(".btn").on("click", function() {
         if (unit === 0) {
