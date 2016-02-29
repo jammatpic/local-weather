@@ -29,12 +29,7 @@ function loadWeather() {
                 // creating class for icon: taking into account weather condition and time of day
                 $("i").removeClass();
                 $("i").addClass("wi wi-owm-" + lightStatus + "-" + JSON.stringify(data.weather[0].id));
-                
-                /*if (firstLoad === true) { // code is here so it runs once loaded
-                    $(".last").append('<button class = "btn btn-default">Fahrenheit instead?</button>');
-                } else {
-                    firstLoad = false;
-                }*/
+                $(".btn").show();
             });
         });
     } 
